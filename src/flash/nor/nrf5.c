@@ -610,7 +610,7 @@ static int nrf5_info(struct flash_bank *bank, char *buf, int buf_size)
 
 	} else {
 		res = snprintf(buf, buf_size, "nRF51xxx (HWID 0x%04" PRIx16 ")",
-				chip->hwid);
+				(unsigned short)chip->hwid);
 	}
 	if (res <= 0)
 		return ERROR_FAIL;
